@@ -9,15 +9,15 @@ resource "aws_ecs_task_definition" "my_task" {
   cpu    = "256"
   memory = "512"
   container_definitions = jsonencode([{
-    name      = "myapp"
-    image     = "aws_ecr_repository.app_ecr_repo.repository_url"
+    name      = "react-app"
+    image     = "026090536569.dkr.ecr.us-east-1.amazonaws.com/react-app"
     cpu       = 256
     memory    = 512
     essential = true
     portMappings = [
       {
         containerPort = 8080
-        hostPort      = 8080
+        hostPort      = 80
         protocol      = "tcp"
       }
     ]
