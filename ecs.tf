@@ -72,6 +72,13 @@ resource "aws_security_group" "my_sg" {
     Name = "my-react-sg"
   }
 }
+resource "aws_ecr_repository" "my_react_repo" {
+  name = "react-app"
+
+  tags = {
+    Name = "my-react-repository"
+  }
+}
 
 # Create an ECS Cluster
 resource "aws_ecs_cluster" "my_rccluster" {
